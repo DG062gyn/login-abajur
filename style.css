@@ -1,9 +1,8 @@
-/* Reset básico para remover margens e padronizar fontes */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -12,22 +11,24 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background 0.4s ease;
 }
 
-/* Card centralizado que segura a luminária e o formulário */
+/* Container Principal */
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 50px;
+  gap: 60px;
   background-color: #1a1a1e;
-  padding: 50px;
+  padding: 40px 60px;
   border-radius: 20px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
   position: relative;
+  overflow: hidden;
 }
 
-/* --- MONTAGEM DO ABAJUR --- */
+/* Design da Luminária */
 .lamp-wrapper {
   position: relative;
   width: 160px;
@@ -43,59 +44,56 @@ body {
   align-items: center;
 }
 
-/* Cúpula do abajur */
 .shade {
-  width: 130px;
-  height: 65px;
+  width: 140px;
+  height: 70px;
   background: #e0e0e0;
-  border-radius: 65px 65px 10px 10px;
+  border-radius: 70px 70px 10px 10px;
   position: relative;
   z-index: 2;
 }
 
-/* Efeito do feixe de luz aceso */
 .light {
   position: absolute;
   top: 60px;
-  width: 160px;
+  width: 120px;
   height: 0;
-  background: radial-gradient(ellipse at top, rgba(255, 230, 150, 0.85), transparent 70%);
+  background: radial-gradient(ellipse at top, rgba(255, 235, 170, 0.8), transparent 70%);
   border-radius: 50%;
   opacity: 0;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease;
   z-index: 1;
   pointer-events: none;
 }
 
-/* Ativação da luz através de classe adicionada via JS */
+/* Estado da lâmpada acesa */
 body.lamp-on .light {
   height: 200px;
   opacity: 1;
-  filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
+  filter: drop-shadow(0 0 25px rgba(255, 220, 120, 0.6));
 }
 
-/* Haste e Base */
 .stand {
   width: 8px;
-  height: 130px;
-  background: #777;
+  height: 120px;
+  background: #888;
 }
 
 .base {
-  width: 80px;
+  width: 70px;
   height: 12px;
-  background: #999;
+  background: #aaa;
   border-radius: 6px 6px 0 0;
 }
 
-/* Cordinha clicável de puxar */
+/* Cordinha de puxar */
 .string {
   position: absolute;
-  top: 65px;
+  top: 70px;
   right: 25px;
   width: 2px;
-  height: 55px;
-  background: #aaa;
+  height: 50px;
+  background: #888;
   cursor: pointer;
   z-index: 3;
   transition: transform 0.1s ease;
@@ -111,24 +109,24 @@ body.lamp-on .light {
   border-radius: 50%;
 }
 
-/* Efeito visual ao puxar a cordinha */
 .string:active {
-  transform: translateY(8px);
+  transform: translateY(10px);
 }
 
-/* --- ESTILIZAÇÃO DO FORMULÁRIO --- */
+/* Formulário */
 .login-form {
   width: 280px;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.05);
   padding: 30px;
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 .login-form h2 {
-  color: #ffffff;
-  margin-bottom: 25px;
+  color: #fff;
+  margin-bottom: 20px;
   text-align: center;
   font-weight: 500;
 }
@@ -141,12 +139,12 @@ body.lamp-on .light {
 
 .form-group label {
   color: #aaa;
-  font-size: 13px;
+  font-size: 12px;
   margin-bottom: 6px;
 }
 
 .form-group input {
-  padding: 12px 14px;
+  padding: 10px 14px;
   border-radius: 8px;
   border: 1px solid #333;
   background: #25252b;
@@ -159,25 +157,21 @@ body.lamp-on .light {
   border-color: #d4af37;
 }
 
-/* Botão em degradê dourado */
+/* Botão Dourado */
 .login-btn {
   width: 100%;
   padding: 12px;
   margin-top: 10px;
   border: none;
   border-radius: 20px;
-  background: linear-gradient(135deg, #f0d588, #c69a3c);
+  background: linear-gradient(135deg, #e6c875, #bd9136);
   color: #1a1a1e;
   font-weight: bold;
-  font-size: 14px;
   cursor: pointer;
-  transition: opacity 0.2s, transform 0.1s;
+  transition: transform 0.2s, opacity 0.2s;
 }
 
 .login-btn:hover {
   opacity: 0.9;
-}
-
-.login-btn:active {
-  transform: scale(0.98);
+  transform: translateY(-1px);
 }
