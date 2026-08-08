@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Interativo com Abajur</title>
+  <!-- Link conectando o CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <!-- Estrutura do Abajur -->
+    <div class="lamp-wrapper">
+      <div class="lamp">
+        <div class="shade"></div>
+        <div class="light"></div>
+        <div class="stand"></div>
+        <div class="base"></div>
+        <div class="string" id="lampString">
+          <div class="bead"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Estrutura do Formulário de Login -->
+    <div class="login-form">
+      <h2>Welcome</h2>
+      <form onsubmit="return false;">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Enter name" autocomplete="off" />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter Password" />
+        </div>
+
+        <button class="login-btn" type="submit">Sign In</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Link conectando o JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
